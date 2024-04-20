@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (YYYY-MM-DD): 0.99.01 2022-01-27 (Windows 64 bit) : Build 1073</p><p>Spreading the word about using Great Cow BASIC ? Please goto to https://sourceforge.net/projects/gcbasic/reviews/new?stars=5 and provide feedback to share your experience.</p>
+<h2>Compilation time</h2>
+<p> (Compile time: 1.25 seconds)</p>
+<p> (Assembly time: 0 seconds)</p>
+<p> (Download time: 0 seconds)</p>
+<p> (Total time: 1.25 seconds)</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: 16F18875</p>
+<p>Program Memory: 935/8192 words (11.41%)</p>
+<p>RAM: 24/1024 bytes (2.34%)</p>
+<p> OSC: HFINT32, 32Mhz (Internal oscillator)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Page</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>47</td><td>31</td><td>1</td><td>INITLCD(13), MOTORS(2), FLAMEDETEC(1), LCDDISPLAY(1), INITSYS(46)</td></tr>
+<tr><td>LCDDISPLAY</td><td>12</td><td>101</td><td>1</td><td>SYSDIVSUB16(4), Delay_MS(1), PRINT(2), PRINT(2), LOCATE(2), READAD(2), CLS(1)</td></tr>
+<tr><td>MOTORS</td><td>11</td><td>13</td><td>1</td><td></td></tr>
+<tr><td>FLAMEDETEC</td><td>5</td><td>6</td><td>1</td><td></td></tr>
+<tr><td>READAD</td><td>69</td><td>287</td><td>1</td><td>Delay_10US(1)</td></tr>
+<tr><td>LOCATE</td><td>7</td><td>24</td><td>1</td><td>SYSMULTSUB(1), Delay_10US(1), LCDNORMALWRITEBYTE(1)</td></tr>
+<tr><td>CLS</td><td>5</td><td>16</td><td>1</td><td>Delay_MS(1), LCDNORMALWRITEBYTE(2)</td></tr>
+<tr><td>INITLCD</td><td>241</td><td>84</td><td>1</td><td>Delay_MS(3), CLS(1), LCDNORMALWRITEBYTE(3)</td></tr>
+<tr><td>PRINT</td><td>8</td><td>33</td><td>1</td><td>SYSCOMPEQUAL(1), LCDNORMALWRITEBYTE(1)</td></tr>
+<tr><td>PRINT</td><td>13</td><td>53</td><td>1</td><td>SYSDIVSUB(2), SYSCOMPLESSTHAN(2), LCDNORMALWRITEBYTE(3)</td></tr>
+<tr><td>CHECKBUSYFLAG</td><td>29</td><td>38</td><td>1</td><td></td></tr>
+<tr><td>LCDNORMALWRITEBYTE</td><td>223</td><td>70</td><td>1</td><td>CHECKBUSYFLAG(1)</td></tr>
+<tr><td>INITSYS</td><td>837</td><td>27</td><td>1</td><td></td></tr>
+<tr><td>SYSMULTSUB</td><td>39</td><td>12</td><td>1</td><td></td></tr>
+<tr><td>SYSDIVSUB</td><td>48</td><td>20</td><td>1</td><td></td></tr>
+<tr><td>SYSDIVSUB16</td><td>38</td><td>52</td><td>1</td><td>SYSCOMPEQUAL16(1)</td></tr>
+<tr><td>SYSCOMPEQUAL</td><td>20</td><td>6</td><td>1</td><td></td></tr>
+<tr><td>SYSCOMPEQUAL16</td><td>34</td><td>11</td><td>1</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHAN</td><td>23</td><td>7</td><td>1</td><td></td></tr>
+<tr><td>Delay_10US</td><td>0</td><td>8</td><td>1</td><td></td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>14</td><td>1</td><td></td></tr>
+<tr><td>SysStringTables</td><td>0</td><td>22</td><td>1</td><td></td></tr>
+</table>
+</body>
+</html>

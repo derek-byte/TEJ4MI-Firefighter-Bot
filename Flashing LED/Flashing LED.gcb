@@ -1,0 +1,16 @@
+#chip 16f18875
+
+#define LED PORTC.0
+#define Motor PORTD.1
+
+#define FlashDelay 125 ms
+
+set Motor ON
+start:
+  set LED ON
+  wait FlashDelay
+  set LED OFF
+  wait FlashDelay
+
+goto start
+end

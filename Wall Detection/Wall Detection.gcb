@@ -1,0 +1,92 @@
+#chip 16f18875
+
+'Motors
+#define LME PortC.0
+#define LMB PortC.1
+Dir LME OUT
+Dir LMB OUT
+
+#define RME PortC.2
+#define RMB PortC.3
+Dir RME OUT
+Dir RMB OUT
+
+'Line Detection
+#define PHOTOTRANS PortD.1
+Dir PHOTOTRANS IN
+
+'LCD Connection Settings
+#define LCD_LINES 2
+#define LCD_IO 4
+#define LCD_DB4 PortD.4
+#define LCD_DB5 PortD.5
+#define LCD_DB6 PortD.6
+#define LCD_DB7 PortD.7
+#define LCD_RS PORTC.4
+#define LCD_RW PORTC.5
+#define LCD_Enable PORTC.6
+
+Dir LCD_RS out
+Dir LCD_RW out
+Dir LCD_Enable out
+Dir LCD_DB4 out
+Dir LCD_DB5 in
+Dir LCD_DB6 out
+Dir LCD_DB7 in
+
+'Wall Detection
+#define WallLeft porta.2
+#define WallFront porta.1
+
+Dir WallLeft in
+Dir WallFront in
+
+Dim WallFrontVoltage as Byte
+Dim WallLeftVoltage as Byte
+
+Dim DigitalWallFront as Byte
+Dim DigitalWallLeft as Byte
+
+sub lcdDisplay()
+  CLS
+
+  WallFrontVoltage = READAD(AN1)
+  WallLeftVoltage = READAD(AN2)
+
+  DigitalWallFront = ((6787/(WallFrontVoltage-3))-4)/5
+  DigitalWallLeft = ((6787/(WallLeftVoltage-3))-4)/5
+
+  Locate 0,0
+  Print "LEFT: "
+  Print DigitalWallLeft
+  Locate 1,0
+  Print "FRONT: "
+  Print DigitalWallFront
+  wait 500 ms
+end sub
+
+sub motors(direction)
+  if direction = 1 then
+    set LME OFF
+    set LMB ON
+    set RME OFF
+    set RMB ON
+  else
+    set LME ON
+    set LMB OFF
+    set RME ON
+    set RMB OFF
+  end if
+end sub
+
+Do Forever
+  lcdDisplay()
+  if PHOTOTRANS ON then
+    motors(0)
+  else
+    motors(1)
+  end if
+Loop
+'end
+
+'loop

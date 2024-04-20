@@ -1,0 +1,26 @@
+#chip 16f18875
+
+#define LME PortC.0
+#define LMB PortC.1
+Dir LME OUT
+Dir LMB OUT
+
+#define RME PortC.2
+#define RMB PortC.3
+Dir RME OUT
+Dir RMB OUT
+
+
+start:
+  set LME OFF
+  set LMB ON
+  set RME OFF
+  set RMB ON
+  WAIT 1000 ms
+  set LME ON
+  set LMB OFF
+  set RME ON
+  set RMB OFF
+  WAIT 1000 ms
+goto start
+end

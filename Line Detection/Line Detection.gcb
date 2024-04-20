@@ -1,0 +1,39 @@
+#chip 16f18875
+
+'Motors
+#define LME PortC.0
+#define LMB PortC.1
+Dir LME OUT
+Dir LMB OUT
+
+#define RME PortC.2
+#define RMB PortC.3
+Dir RME OUT
+Dir RMB OUT
+
+'Line Detection
+#define PHOTOTRANS PortD.4
+Dir PHOTOTRANS IN
+
+sub motors(direction)
+  if direction = 1 then
+    set LME OFF
+    set LMB ON
+    set RME OFF
+    set RMB ON
+  else
+    set LME ON
+    set LMB OFF
+    set RME ON
+    set RMB OFF
+  end if
+end sub
+
+start:
+  if PHOTOTRANS ON then
+    motors(0)
+  else
+    motors(1)
+  end if
+goto start
+end
